@@ -49,7 +49,7 @@ const MainContent = dynamic(() => import('src/components/MainContent'), {
   ssr: false,
 });
 
-export  function Home() {
+export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center p-8">
       <div className="container flex flex-col items-center gap-8 px-4">

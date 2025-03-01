@@ -6,7 +6,7 @@ import TransactionWrapper from './TransactionWrapper';
 import SelectionScreen from './SelectionScreen';
 
 export default function MainContent() {
-  const { isConnected } = useAccount();
+  const { isConnected, address } = useAccount();
   const [hasSelectedPreferences, setHasSelectedPreferences] = useState(false);
   const [selectedReligion, setSelectedReligion] = useState("");
   const [selectedLanguage, setSelectedLanguage] = useState("");
@@ -34,7 +34,7 @@ export default function MainContent() {
           <p className="text-sm">
             Selected: {selectedReligion} - {selectedLanguage}
           </p>
-          <TransactionWrapper />
+          {address && <TransactionWrapper address={address} />}
         </div>
       )}
     </div>
