@@ -22,8 +22,8 @@ export default function TransactionWrapper({ address }: { address: Address }) {
     {
       address: mintContractAddress,
       abi: mintABI,
-      functionName: 'mint',
-      args: [address],
+      functionName: 'mintStringNFT',
+      args: ['God Bless America.'],
     },
   ] as unknown as ContractFunctionParameters[];
 
@@ -38,6 +38,7 @@ export default function TransactionWrapper({ address }: { address: Address }) {
   return (
     <div className="flex w-[450px]">
       <Transaction
+        isSponsored
         contracts={contracts}
         className="w-[450px]"
         chainId={BASE_SEPOLIA_CHAIN_ID}

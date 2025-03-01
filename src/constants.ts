@@ -1,17 +1,47 @@
-export const BASE_SEPOLIA_CHAIN_ID = 84532;
-export const mintContractAddress = '0xA3e40bBe8E8579Cd2619Ef9C6fEA362b760dac9f';
+// Base Mainnet Chain ID
+export const BASE_SEPOLIA_CHAIN_ID = 8453;
+
+// Your deployed NFT contract address on Base Mainnet
+export const mintContractAddress = "0xa4DC59e6f5BF53e6511343CB9C20aDcF92D7D903";
+
+// Updated ABI for NftMint contract
 export const mintABI = [
   {
     inputs: [
       {
-        internalType: 'address',
-        name: 'to',
-        type: 'address',
+        internalType: "string",
+        name: "content",
+        type: "string",
       },
     ],
-    name: 'mint',
-    outputs: [],
-    stateMutability: 'public',
-    type: 'function',
+    name: "mintStringNFT",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "public",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "tokenId",
+        type: "uint256",
+      },
+    ],
+    name: "getTokenContent",
+    outputs: [
+      {
+        internalType: "string",
+        name: "",
+        type: "string",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
   },
 ] as const;
