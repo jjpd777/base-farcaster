@@ -2,7 +2,7 @@
 export const BASE_SEPOLIA_CHAIN_ID = 8453;
 
 // Your deployed NFT contract address on Base Mainnet
-export const mintContractAddress = "0xa4DC59e6f5BF53e6511343CB9C20aDcF92D7D903";
+export const mintContractAddress = "0xF10106a1C3dB402955e9E172E01685E2a19820e6";
 
 // Updated ABI for NftMint contract
 export const mintABI = [
