@@ -1,7 +1,5 @@
 // Base Mainnet Chain ID
-export const BASE_MAINNET_CHAIN_ID = 8453;
-// Base Sepolia Chain ID
-export const BASE_SEPOLIA_CHAIN_ID = 84532;
+export const BASE_SEPOLIA_CHAIN_ID = 8453;
 
 // Your deployed NFT contract address on Base Mainnet
 export const mintContractAddress = "0xa4DC59e6f5BF53e6511343CB9C20aDcF92D7D903";
