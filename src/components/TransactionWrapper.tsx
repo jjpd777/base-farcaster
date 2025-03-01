@@ -33,6 +33,14 @@ export default function TransactionWrapper({ address }: { address: Address }) {
 
   const handleSuccess = (response: TransactionResponse) => {
     console.log('Transaction successful', response);
+    
+    // Extract transaction hash and redirect to Basescan
+    if (response.transactionReceipts && response.transactionReceipts.length > 0) {
+      const transactionHash = response.transactionReceipts[0].transactionHash;
+      if (transactionHash) {
+        window.location.href = `https://basescan.org/tx/${transactionHash}`;
+      }
+    }
   };
 
   return (
