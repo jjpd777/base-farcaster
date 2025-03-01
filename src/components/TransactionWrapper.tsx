@@ -34,11 +34,11 @@ export default function TransactionWrapper({ address }: { address: Address }) {
   const handleSuccess = (response: TransactionResponse) => {
     console.log('Transaction successful', response);
     
-    // Extract transaction hash and redirect to Basescan
+    // Extract transaction hash and open Basescan in a new tab
     if (response.transactionReceipts && response.transactionReceipts.length > 0) {
       const transactionHash = response.transactionReceipts[0].transactionHash;
       if (transactionHash) {
-        window.location.href = `https://basescan.org/tx/${transactionHash}`;
+        window.open(`https://basescan.org/tx/${transactionHash}`, '_blank');
       }
     }
   };
@@ -56,7 +56,10 @@ export default function TransactionWrapper({ address }: { address: Address }) {
         <TransactionButton className="mt-0 mr-auto ml-auto w-[450px] max-w-full text-[white]" />
         <TransactionStatus>
           <TransactionStatusLabel />
-          <TransactionStatusAction />
+          {/* Only show the action button for completed transactions */}
+          {({ status }) => 
+            status === 'confirmed' && <TransactionStatusAction />
+          }
         </TransactionStatus>
       </Transaction>
     </div>
