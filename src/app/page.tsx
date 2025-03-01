@@ -43,3 +43,13 @@ export default function Page() {
     </div>
   );
 }
+import UserOnboarding from 'src/components/UserOnboarding';
+
+export default function Home() {
+  return (
+    <main className="min-h-screen flex flex-col items-center justify-center p-4">
+      <h1 className="text-3xl font-bold mb-6">Welcome to Our App</h1>
+      <UserOnboarding />
+    </main>
+  );
+}
